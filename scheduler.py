@@ -24,25 +24,6 @@ class Scheduler:
                 for hour in range(start, end):
                     time_slots[hour] += seniority_weight
 
-        # Initialize a time_slots array of sufficient length (e.g., 24 hours for a day or more)
-        # Ensure time_slots is large enough to cover the full range of time you are dealing with.
-
-        """ POSSIBLE OPTIMZIED VERSION """
-        # for member in self.team_members:
-        #     seniority_weight = 1.5 if member.seniority == 2 else member.seniority
-
-        #     # Iterate over the UTC time ranges
-        #     for start, end in member.get_utc():
-        #         time_slots[start] += seniority_weight  # Add seniority at the start time
-        #         if end < len(time_slots):  # Mark the end time by subtracting seniority
-        #             time_slots[end] -= seniority_weight
-
-        # # Accumulate the seniority across the time_slots in a single pass
-        # current_seniority = 0
-        # for hour in range(len(time_slots)):
-        #     current_seniority += time_slots[hour]
-        #     time_slots[hour] = current_seniority
-
         # variables to track the sliding window and results
         lpointer = 0  # left pointer for sliding window
         max_sum = 0   # max sum of most people available  
